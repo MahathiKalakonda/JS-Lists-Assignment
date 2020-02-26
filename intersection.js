@@ -14,4 +14,4 @@ function main()
 {
     let firstBatch = [1, 2, 3, 4], secondBatch = [1, 2, 2, 5];
     console.log("Intersection is : " + intersection(firstBatch, secondBatch));
-}   
+}
