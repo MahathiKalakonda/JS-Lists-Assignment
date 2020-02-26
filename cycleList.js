@@ -13,5 +13,3 @@ function main()
     var elements = [1, 2, 3, 4];
     console.log("Cycle of elements is : "  + computeListCycle(elements, 9));
 }
-
-main();
