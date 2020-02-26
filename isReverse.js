@@ -31,3 +31,9 @@ function main()
     console.log("First list is reverse of second list : " + isReverse(firstBatch, secondBatch));
     console.log("Second list is reverse of first list : " + isReverse(secondBatch, firstBatch));
 }
+
+module.exports = {
+isEqual,
+isReverse,
+computeReverse
+};
