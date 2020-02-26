@@ -1,11 +1,6 @@
 function dropFirstNElements(elements, dropCount)
 {
-    let elementsButFirstN = elements;
-    for(let loopTurn = 0; loopTurn < dropCount; loopTurn++)
-    {
-        elementsButFirstN.shift();
-    }
-    return elementsButFirstN;
+    return elements.splice(dropCount);
 }
 
 function main()
