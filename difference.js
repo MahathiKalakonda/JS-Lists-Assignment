@@ -15,3 +15,8 @@ function main()
     mainElements = [1, 2, 3, 4, 2], removableElements = [1, 2, 3];
     console.log("Elements after  difference : " + difference(mainElements, removableElements));
 }
+
+module.exports =
+{
+    difference
+};
