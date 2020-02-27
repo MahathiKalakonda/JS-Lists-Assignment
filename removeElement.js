@@ -1,17 +1,17 @@
-function removeElement(elements, element)
+function removeElement(element)
 {
-    let filteredElements = [];
-    for(let index = 0; index < elements.length; index++)
-    {
-        if(element != elements[index])
-            filteredElements.push(elements[index]);
-    }
+    return element != this;
+}
+
+function removeElementOccurrences(elements, element)
+{
+    let filteredElements = elements.filter(removeElement, element);
     return filteredElements;
 }
 
 function main()
 {
-    console.log("Elements after removal : " + removeElement([1,2,3,4,1,2,1],1));
-    console.log("Elements after removal : " + removeElement([1,2,3,4,1,2,1],2));
-    console.log("Elements after removal : " + removeElement([1,2,3,4,1,2,1],5));
+    console.log("Elements after removal : " + removeElementOccurrences([1,2,3,4,1,2,1],1));
+    console.log("Elements after removal : " + removeElementOccurrences([1,2,3,4,1,2,1],2));
+    console.log("Elements after removal : " + removeElementOccurrences([1,2,3,4,1,2,1],5));
 }
