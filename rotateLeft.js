@@ -1,11 +1,12 @@
+function rotateElement(element, index, elements)
+{
+    let newIndex = (index + this) % elements.length;
+    return elements[newIndex];
+}
+
 function rotateLeft(elements, rotateCount)
 {
-    rotatedElements = [];
-    for(let index = 0; index < elements.length; index++)
-    {
-        indexInElements = (index + rotateCount) % elements.length;
-        rotatedElements.push(elements[indexInElements]);
-    }
+    let rotatedElements = elements.map(rotateElement, rotateCount);
     return rotatedElements;
 }
 
