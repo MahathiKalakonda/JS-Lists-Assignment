@@ -1,13 +1,13 @@
+function areElementsEqual(element, index)
+{
+    return element == this[index];
+}
+
 function isEqual(firstBatch, secondBatch)
 {
     if(firstBatch.length != secondBatch.length)
         return false;
-    for(let index = 0; index < secondBatch.length; index++)
-    {
-        if(firstBatch[index] != secondBatch[index])
-            return false;
-    }
-    return true;
+    return firstBatch.every(areElementsEqual, secondBatch);
 }
 
 function computeReverse(elements)
