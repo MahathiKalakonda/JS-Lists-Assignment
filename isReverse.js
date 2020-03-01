@@ -1,23 +1,17 @@
-function areElementsEqual(element, index)
-{
-    return element == this[index];
-}
-
 function isEqual(firstBatch, secondBatch)
 {
     if(firstBatch.length != secondBatch.length)
         return false;
-    return firstBatch.every(areElementsEqual, secondBatch);
+    return firstBatch.every(function(element, index)
+        {   return element == this[index];
+        }, secondBatch);
 }
 
 function computeReverse(elements)
 {
-    let reverseElements = [];
-    for(let index = 0; index < elements.length; index++)
-    {
-        reverseElements.unshift(elements[index]);
-    }
-    return reverseElements;
+    return elements.map(function(element, index, elements)
+        {   return  elements[elements.length - index - 1];
+        });
 }
 
 function isReverse(firstBatch, secondBatch)
@@ -35,5 +29,4 @@ function main()
 module.exports = {
 isEqual,
 isReverse,
-computeReverse
 };
