@@ -1,12 +1,8 @@
 function computeElementFrequency(elements, element)
 {
-    let elementFrequency = 0;
-    for(let index = 0; index < elements.length; index++)
-    {
-        if(element == elements[index])
-            elementFrequency ++;
-    }
-    return elementFrequency;
+    return elements.reduce(function(frequency, currentValue)
+            {   return currentValue == element ? ++frequency : frequency;
+            }, 0);
 }
 
 function main()
