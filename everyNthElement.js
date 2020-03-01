@@ -1,11 +1,8 @@
 function getEveryNthElement(elements, incrementor)
 {
-    let nthElements = []
-    for(let index = 0; index < elements.length; index += incrementor)
-    {
-        nthElements.push(elements[index]);
-    }
-    return nthElements;
+    return elements.filter(function(element, index)
+        {   return index % incrementor == 0;
+        });
 }
 
 function main()
