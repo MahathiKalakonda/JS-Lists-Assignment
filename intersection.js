@@ -1,13 +1,12 @@
 function intersection(firstBatch, secondBatch)
 {
-    let intersectingElements = [], differenceElements = firstBatch;
-    for(let index = 0; index < secondBatch.length; index++)
-    {
-        let indexInFirstBatch = differenceElements.indexOf(secondBatch[index])
-        if(indexInFirstBatch != -1)
-            intersectingElements.push(differenceElements.splice(indexInFirstBatch, 1));
-    }
-    return intersectingElements;
+    let elements = secondBatch;
+    return firstBatch.filter(function(element)
+            {   indexInSecond = elements.indexOf(element);
+                delete elements[indexInSecond];
+                if(indexInSecond != -1)
+                    return element;
+            });
 }
 
 function main()
