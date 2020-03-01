@@ -1,13 +1,11 @@
 function isSubset(superSet, subset)
 {
-    for(let index = 0; index < subset.length; index++)
-    {
-        let indexInSuperSet = superSet.indexOf(subset[index]);
-        if(indexInSuperSet == -1)
-            return false;
-        superSet.splice(indexInSuperSet,1);
-    }
-    return true;
+    let elements = superSet;
+    return subset.every(function(element)
+    {   let indexInSuperSet = elements.indexOf(element);
+        delete elements[indexInSuperSet];
+        return indexInSuperSet != -1;
+    },elements);
 }
 
 function main()
